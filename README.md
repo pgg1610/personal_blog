@@ -56,7 +56,6 @@ Open `http://localhost:4000`. Build the production site with `bundle exec jekyll
 - `_includes/` — shared navigation and social icons
 - `assets/css/main.css` — plain CSS, no preprocessing
 - `assets/js/theme.js` — saved theme preference; falls back safely when storage is blocked
-- `assets/pdf/June2024_Pushkar_CV.pdf` — the directly linked CV (June 2024 version)
 
 Social URLs live in `_config.yml`; page links live in `_includes/navigation.html`. Restart Jekyll after changing `_config.yml`.
 
