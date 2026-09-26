@@ -1,0 +1,27 @@
+// Apply the saved theme before paint; the light default also works without JS.
+(() => {
+  const root = document.documentElement;
+  let theme = 'light';
+  try {
+    if (localStorage.getItem('theme') === 'dark') theme = 'dark';
+  } catch { /* Storage can be unavailable in privacy-restricted browsers. */ }
+  root.dataset.theme = theme;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const label = () => {
+      const action = `Switch to ${root.dataset.theme === 'dark' ? 'light' : 'dark'} mode`;
+      button.setAttribute('aria-label', action);
+      button.title = action;
+    };
+    button.hidden = false;
+    label();
+    button.addEventListener('click', () => {
+      root.dataset.themeTransition = '';
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch { /* Still toggle. */ }
+      label();
+    });
+  });
+})();

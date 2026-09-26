@@ -1,0 +1,9 @@
+<nav class="site-links" aria-label="Site navigation">
+  {% unless page.landing %}<a href="{{ '/' | relative_url }}">about</a>{% endunless %}
+  <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>blog</a>
+  <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>publications</a>
+  <a href="{{ '/assets/pdf/June2024_Pushkar_CV.pdf' | relative_url }}">CV</a>
+  <a href="{{ '/tags/' | relative_url }}"{% if page.url == '/tags/' %} aria-current="page"{% endif %}>tags</a>
+  <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  <a href="mailto:{{ site.email }}">email</a>
+</nav>

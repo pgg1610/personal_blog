@@ -1,0 +1,38 @@
+title: Pushkar Ghanekar
+email: hello@pushkarghanekar.com
+description: Notes on science, technology, and the work of making medicines.
+url: "https://www.pushkarghanekar.com"
+baseurl: ""
+lang: en-US
+
+permalink: /blog/:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+feed:
+  posts_limit: 20
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .gitignore
+  - bin
+  - _posts/classify_tags.py
+  - _posts/__pycache__
+  - vendor
+  - node_modules
+  - .github
+
+# Shared social icons. Leave a value blank to hide its icon.
+social:
+  github: https://github.com/pgg1610
+  linkedin: https://www.linkedin.com/in/pushkarghanekar/
+  x: https://x.com/mepgg
+  instagram: https://www.instagram.com/pgg1610/
+  data_blog: https://pgg1610.github.io/data_blog/
+  substack: https://substack.com/@latentspace
