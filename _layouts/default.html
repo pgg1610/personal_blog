@@ -8,9 +8,12 @@
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    {% include theme-init.html %}
   </head>
-  <body{% if page.landing %} class="home-page"{% endif %}>
+  {% assign body_class = '' %}
+    {% if page.landing %}{% assign body_class = 'home-page' %}{% endif %}
+    {% if page.animate %}{% assign body_class = body_class | append: ' flow-page' %}{% endif %}
+    <body{% unless body_class == '' %} class="{{ body_class | strip }}"{% endunless %}>
     <a class="skip-link" href="#main">Skip to content</a>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" hidden>
       <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 14.8A9 9 0 0 1 9.2 3.4 9 9 0 1 0 20.6 14.8z"/></svg>
@@ -25,12 +28,15 @@
       <main id="main">
         {{ content }}
       </main>
+      {% if page.search %}<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>{% endif %}
+      {% if page.zoom %}<script src="{{ '/assets/js/lightbox.js' | relative_url }}" defer></script>{% endif %}
       <footer class="site-footer">
         {% include navigation.html %}
         {% include social.html %}
         {% if page.landing %}
           <p class="local-time">Indianapolis, IN<span id="local-clock" hidden> · <time id="indianapolis-time"></time></span></p>
           <script src="{{ '/assets/js/clock.js' | relative_url }}" defer></script>
+          <script src="{{ '/assets/js/portraits.js' | relative_url }}" defer></script>
         {% endif %}
       </footer>
     </div>

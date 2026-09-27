@@ -3,6 +3,7 @@ layout: default
 title: About
 description: Pushkar Ghanekar is a scientist working at the intersection of chemistry, data, and AI.
 permalink: /about/
+zoom: true
 ---
 <article class="page">
   <header class="page-header">
@@ -11,7 +12,7 @@ permalink: /about/
   </header>
 
   <div class="page-content">
-    <img class="headshot" src="{{ '/assets/img/headshot_July2024.avif' | relative_url }}" alt="Portrait of Pushkar Ghanekar" width="360" height="360">
+    <img class="headshot" src="{{ '/assets/img/headshot_July2024.avif' | relative_url }}" alt="Portrait of Pushkar Ghanekar" width="720" height="856" decoding="async">
 
     <p>I use science, data, and AI to design better medicines at <a href="https://www.lilly.com/discovery/research-and-scientific-discovery">Eli Lilly</a>. I lead Frontier AI, a group I have been building since 2025 to help create AI platforms that accelerate molecule design.</p>
 

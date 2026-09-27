@@ -63,8 +63,10 @@ main { padding: 3.5rem 0 0; overflow-wrap: break-word; }
 .home-page .site-shell { max-width: 35rem; padding: clamp(6rem, 16vh, 11rem) 0 4rem; }
 .home-page main { padding: 0; }
 .home-page .site-footer { margin: 2.25rem 0 0; }
-.home-identity { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.25rem; }
-.home-identity img { width: 72px; height: 72px; flex: none; object-fit: cover; border-radius: 8px; }
+.home-identity { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2.25rem; }
+.home-portraits { position: relative; flex: none; width: 96px; height: 96px; }
+.home-portraits img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; opacity: 0; }
+.home-portraits img.is-active { opacity: 1; }
 .home-identity h1 { font-size: clamp(1.85rem, 5vw, 2.8rem); font-style: italic; }
 .home-identity p { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.9rem; letter-spacing: 0.02em; }
 .home-about { line-height: 1.8; }
@@ -93,16 +95,40 @@ main { padding: 3.5rem 0 0; overflow-wrap: break-word; }
 .skip-link { position: fixed; top: 0.5rem; left: 0.5rem; padding: 0.5rem; background: var(--paper); transform: translateY(-200%); z-index: 3; }
 .skip-link:focus { transform: none; }
 
-/* Writing: dates on the left, titles aligned on the right. */
-.section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.75rem; }
-.section-heading h2 { margin: 0; font: 500 0.85rem var(--sans); }
-.section-heading a { color: var(--muted); font-size: 0.85rem; }
-.post-list { list-style: none; margin: 0; padding: 0; }
-.post-list li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; margin: 0; padding: 1rem 0; border-top: 1px solid var(--line); }
-.post-list time { color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; padding-top: 0.15rem; }
-.post-list h3 { margin: 0; text-align: right; font-weight: 500; }
+/* Page intro note with inline links. */
+.page-note { margin: 1rem 0 0; color: var(--muted); font-size: 0.95rem; }
+.page-note a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); }
+.page-note a:hover { text-decoration-color: currentColor; }
+
+/* Search: a plain field that filters the writing list. */
+.search-form { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.75rem; padding: 0.15rem 0; border-bottom: 1px solid var(--line); transition: border-color 220ms ease; }
+.search-form:focus-within { border-bottom-color: var(--ink); }
+.search-icon { flex: none; width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linecap: round; }
+.search-input { flex: 1 1 auto; min-width: 0; padding: 0.45rem 0; border: 0; background: transparent; color: var(--ink); font: 400 0.95rem var(--sans); }
+.search-input::placeholder { color: var(--muted); }
+.search-input:focus { outline: none; }
+.search-input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.search-input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.search-status { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.8rem; }
+.search-status:empty { display: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Writing: a stacked list of dated entries, separated by hairlines. */
+.post-list { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.post-list li { margin: 0; padding: 1.6rem 0; border-top: 1px solid var(--line); }
+.post-list li:first-child { border-top: 0; }
+.post-list:empty { border-bottom: 0; }
+.post-list time { display: block; margin-bottom: 0.4rem; color: var(--muted); font: 0.7rem var(--sans); letter-spacing: 0.09em; text-transform: uppercase; }
+.post-list h3 { margin: 0; font-family: var(--serif); font-size: 1.4rem; font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; }
 .post-list h3 a { text-decoration: underline; text-decoration-color: transparent; }
 .post-list h3 a:hover { text-decoration-color: var(--muted); }
+
+/* The tag archive stays compact: date on the left, title on the right. */
+.post-list.compact { border-bottom: 0; }
+.post-list.compact li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; padding: 1rem 0; }
+.post-list.compact li:first-child { border-top: 1px solid var(--line); }
+.post-list.compact time { margin: 0; padding-top: 0.15rem; font-size: 0.8rem; letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
+.post-list.compact h3 { font-family: var(--sans); font-size: 1rem; font-weight: 500; line-height: 1.5; letter-spacing: 0; text-align: right; }
 .post-content { color: var(--ink); font-family: var(--serif); font-size: 1.15rem; line-height: 1.8; }
 .post-content h2, .post-content h3 { font-family: var(--sans); font-weight: 600; }
 .post-content h2 { font-size: 1.25rem; }
@@ -114,6 +140,16 @@ main { padding: 3.5rem 0 0; overflow-wrap: break-word; }
 .post-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 0.9em; }
 .post-content th, .post-content td { padding: 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .back-link { margin: 3rem 0 0; font-size: 0.9rem; }
+
+/* Click-to-zoom for images in the writing. */
+.post-content img.is-zoomable, .page-content img.is-zoomable { cursor: zoom-in; }
+.post-content img.is-zoomable:focus-visible, .page-content img.is-zoomable:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.lightbox { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: clamp(1rem, 4vw, 3rem); background: rgba(8, 8, 8, 0.9); }
+.lightbox figure { display: grid; gap: 1rem; justify-items: center; margin: 0; max-width: 100%; }
+.lightbox img { max-width: 100%; max-height: 82vh; width: auto; height: auto; border-radius: 6px; }
+.lightbox figcaption { max-width: 60ch; color: rgba(255, 255, 255, 0.72); font-size: 0.85rem; line-height: 1.5; text-align: center; }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 50%; background: transparent; color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.12); }
 
 /* Content pages keep their own small, plain lists. */
 .headshot { float: right; width: 32%; max-width: 11rem; height: auto; margin: 0 0 1rem 1.5rem; border-radius: 8px; }
@@ -157,11 +193,41 @@ main { padding: 3.5rem 0 0; overflow-wrap: break-word; }
   .home-page .home-about p:nth-child(2) { animation-delay: 310ms; }
   .home-page .home-about p:nth-child(3) { animation-delay: 430ms; }
   .home-page .home-about p:nth-child(4) { animation-delay: 550ms; }
-  .home-page .home-details { animation-delay: 680ms; }
-  .home-page .site-links { animation-delay: 820ms; }
-  .home-page .social-links { animation-delay: 960ms; }
-  .home-page .local-time { animation-delay: 1080ms; }
+  .home-page .home-about p:nth-child(5) { animation-delay: 670ms; }
+  .home-page .home-details { animation-delay: 790ms; }
+  .home-page .site-links { animation-delay: 930ms; }
+  .home-page .social-links { animation-delay: 1070ms; }
+  .home-page .local-time { animation-delay: 1190ms; }
   .home-page .theme-toggle { animation: breeze-in 520ms var(--ease) 100ms both; }
+  .home-portraits img { transition: opacity 900ms var(--ease); }
+  .lightbox:not([hidden]) { animation: breeze-in 220ms var(--ease); }
+
+  /* Inner pages: content settles in, and the writing list drifts in title by title. */
+  .flow-page main { animation: none; }
+  .flow-page .page-header,
+  .flow-page .section-heading,
+  .flow-page .search-form { animation: breeze-in 640ms var(--ease) both; }
+  .flow-page .page-header { animation-delay: 80ms; }
+  .flow-page .section-heading { animation-delay: 200ms; }
+  .flow-page .search-form { animation-delay: 300ms; }
+  .flow-page .post-list--intro li {
+    animation: breeze-in 760ms var(--ease) both;
+    animation-delay: min(calc(380ms + var(--i, 0) * 45ms), 1.3s);
+  }
+
+  /* A single post: header details arrive first, then the writing settles in. */
+  .flow-page .post-header .eyebrow,
+  .flow-page .post-header h1,
+  .flow-page .post-header .lede,
+  .flow-page .post-header .tag-list,
+  .flow-page .post-content,
+  .flow-page .back-link { animation: breeze-in 680ms var(--ease) both; }
+  .flow-page .post-header .eyebrow { animation-delay: 80ms; }
+  .flow-page .post-header h1 { animation-delay: 170ms; }
+  .flow-page .post-header .lede { animation-delay: 260ms; }
+  .flow-page .post-header .tag-list { animation-delay: 340ms; }
+  .flow-page .post-content { animation-delay: 430ms; }
+  .flow-page .back-link { animation-delay: 560ms; }
   a { transition: color 220ms ease, text-decoration-color 220ms ease; }
   .theme-toggle { transition: color 220ms ease, border-color 220ms ease; }
   .home-details summary { transition: color 220ms ease; }
@@ -187,10 +253,11 @@ main { padding: 3.5rem 0 0; overflow-wrap: break-word; }
   .site-shell { width: calc(100% - 2.5rem); }
   .home-page .site-shell { padding: 6rem 0 3rem; }
   .home-identity { gap: 0.8rem; }
-  .home-identity img { width: 60px; height: 60px; }
+  .home-portraits { width: 76px; height: 76px; }
   .home-identity p { font-size: 0.8rem; }
   .theme-toggle { top: 16px; right: 16px; }
-  .post-list li, .update-list li { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.75rem; }
+  .post-list.compact li, .update-list li { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.75rem; }
+  .search-form { padding-left: 0.7rem; }
   .headshot { width: 30%; margin-left: 1rem; }
   .site-links { gap: 0.45rem 1.15rem; }
 }

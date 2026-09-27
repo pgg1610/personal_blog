@@ -3,6 +3,7 @@
   <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>blog</a>
   <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>publications</a>
   <a href="{{ '/tags/' | relative_url }}"{% if page.url == '/tags/' %} aria-current="page"{% endif %}>tags</a>
+  <a href="{{ '/llm-policy/' | relative_url }}"{% if page.url == '/llm-policy/' %} aria-current="page"{% endif %}>llm policy</a>
   <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
   <a href="mailto:{{ site.email }}">email</a>
 </nav>

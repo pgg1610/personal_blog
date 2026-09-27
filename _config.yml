@@ -9,6 +9,15 @@ permalink: /blog/:year/:title/
 markdown: kramdown
 highlighter: rouge
 
+# Blog posts share the same staggered "flow" entrance as the blog and about pages.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      animate: true
+      zoom: true
+
 plugins:
   - jekyll-feed
 
@@ -27,6 +36,7 @@ exclude:
   - vendor
   - node_modules
   - .github
+  - _originals
 
 # Shared social icons. Leave a value blank to hide its icon.
 social:
