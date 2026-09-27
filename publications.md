@@ -25,7 +25,7 @@ permalink: /publications/
       </li>
       <li>
         <p><strong>Adsorbate chemical environment-based machine learning framework for heterogeneous catalysis.</strong><br>
-        <strong>P. G. Ghanekar</strong>, S. Deshpande, and J. Greeley. <em>Nature Communications</em>, 2022. <a href="https://www.nature.com/articles/s41467-022-33256-2">Read paper</a> <span class="publication-citations">147 citations</span></p>
+        <strong>P. G. Ghanekar</strong>, S. Deshpande, and J. Greeley. <em>Nature Communications</em>, 2022. <a href="https://www.nature.com/articles/s41467-022-33256-2">Read paper</a> · <a href="{{ '/blog/2022/ace-gcn/' | relative_url }}">Blog post</a> <span class="publication-citations">147 citations</span></p>
       </li>
       <li>
         <p><strong>Toward improved safety culture in academic and industrial chemical laboratories: an assessment and recommendation of best practices.</strong><br>
@@ -33,15 +33,15 @@ permalink: /publications/
       </li>
       <li>
         <p><strong>Promoting a safe laboratory environment using the Reactive Hazard Evaluation and Analysis Compilation Tool.</strong><br>
-        A. D. Talpade, <strong>P. Ghanekar</strong>, et al. <em>ACS Chemical Health &amp; Safety</em>, 2021. <a href="https://doi.org/10.1021/acs.chas.1c00006">Read paper</a> <span class="publication-citations">13 citations</span></p>
+        A. D. Talpade, <strong>P. Ghanekar</strong>, et al. <em>ACS Chemical Health &amp; Safety</em>, 2021. <a href="https://doi.org/10.1021/acs.chas.1c00006">Read paper</a> · <a href="{{ '/blog/2021/rheact/' | relative_url }}">Blog post</a> <span class="publication-citations">13 citations</span></p>
       </li>
       <li>
         <p><strong>Catalysis at metal/oxide interfaces: density functional theory and microkinetic modeling of water gas shift at Pt/MgO boundaries.</strong><br>
-        <strong>P. Ghanekar</strong>, J. Kubal, Y. Cui, et al. <em>Topics in Catalysis</em>, 2020. <a href="https://doi.org/10.1007/s11244-020-01257-4">Read paper</a> <span class="publication-citations">39 citations</span></p>
+        <strong>P. Ghanekar</strong>, J. Kubal, Y. Cui, et al. <em>Topics in Catalysis</em>, 2020. <a href="https://doi.org/10.1007/s11244-020-01257-4">Read paper</a> · <a href="{{ '/blog/2020/ptmgo/' | relative_url }}">Blog post</a> <span class="publication-citations">39 citations</span></p>
       </li>
       <li>
         <p><strong>Origin of electronic modification of platinum in a Pt3V alloy and its consequences for propane dehydrogenation catalysis.</strong><br>
-        S. C. Purdy, <strong>P. Ghanekar</strong>, et al. <em>ACS Applied Energy Materials</em>, 2020. <a href="https://doi.org/10.1021/acsaem.9b01373">Read paper</a> <span class="publication-citations">67 citations</span></p>
+        S. C. Purdy, <strong>P. Ghanekar</strong>, et al. <em>ACS Applied Energy Materials</em>, 2020. <a href="https://doi.org/10.1021/acsaem.9b01373">Read paper</a> · <a href="{{ '/blog/2020/ptv/' | relative_url }}">Blog post</a> <span class="publication-citations">67 citations</span></p>
       </li>
     </ol>
   </div>
