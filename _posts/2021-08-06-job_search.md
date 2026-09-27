@@ -13,7 +13,7 @@ In spite of it, I’d be lying if I said the job search was easy. Being an inter
 
 Below is the overview of my job search process. 
 
-<img src="{{ '/assets/img/job_search.jpg' | relative_url }}" alt="Job-search notes" loading="lazy">
+<img src="{{ '/assets/img/job_search.avif' | relative_url }}" alt="Job-search notes" width="1400" height="1000" loading="lazy" decoding="async">
 
 <div class="caption">
     Sankey plot summarising my job search. Made using <a href='https://sankeymatic.com/build/'>Sankeymatic</a>. 
