@@ -28,15 +28,16 @@ MODEL = "typesafe/jev-1.13"
 POSTS_DIR = Path(__file__).resolve().parent
 
 TAG_CRITERIA = {
-    "writing": "A reflective, personal, cultural, or general essay about ideas or craft.",
-    "ai": "Substantively about artificial intelligence, machine learning, or language models.",
-    "science": "Substantively about scientific research, scientific reasoning, chemistry, biology, or medicine.",
-    "life": "Substantively about life experience, habits, relationships, wellbeing, or personal development.",
-    "coding": "Substantively about programming, software engineering, tools, or technical implementation.",
-    "agents": "Substantively about AI agents, agentic systems, tool use, or autonomous workflows.",
-    "automation": "Substantively about automating tasks or processes, laboratory robotics, instrument coordination, or reducing manual work through software and hardware.",
-    "travel": "Substantively about travel, places, or a trip.",
-    "papers": "Primarily discusses, reviews, recommends, or closely analyzes academic papers or research literature.",
+    "writing": "Writing, ideas, craft, or personal essays.",
+    "ai": "Artificial intelligence, machine learning, or language models.",
+    "science": "Scientific research, chemistry, biology, or medicine.",
+    "life": "Life experience, habits, or personal development.",
+    "coding": "Programming, software, or technical tools.",
+    "agents": "AI agents, tool use, or autonomous systems.",
+    "automation": "Automating tasks, lab robotics, or workflows.",
+    "travel": "Travel, places, or trips.",
+    "papers": "Academic papers or research literature.",
+    "research": "Research and exploring technical or scientific ideas.",
 }
 
 FRONT_MATTER = re.compile(r"\A---\s*\n.*?\n---\s*\n", re.DOTALL)
