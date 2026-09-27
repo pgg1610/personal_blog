@@ -7,8 +7,15 @@ description: Pushkar Ghanekar — scientist working at the intersection of chemi
 <section class="home-profile">
   <div class="home-identity">
     <div class="home-portraits" id="home-portraits">
-      <img class="is-active" src="{{ '/assets/img/headshot_July2024.avif' | relative_url }}" alt="Portrait of Pushkar Ghanekar" width="72" height="72" decoding="async">
-      <img src="{{ '/assets/img/headshot_cycling.avif' | relative_url }}" alt="Pushkar Ghanekar on a road bike" width="72" height="72" decoding="async">
+      {%- comment -%}
+        Auto-discovered portrait rotation. Drop an image in
+        assets/img/portraits/ (see bin/add-portrait.sh) and it appears here;
+        portraits.js fades through whatever it finds.
+      {%- endcomment -%}
+      {% assign portraits = site.static_files | where_exp: "file", "file.path contains '/assets/img/portraits/'" | sort: "path" %}
+      {% for portrait in portraits %}
+        <img{% if forloop.first %} class="is-active"{% endif %} src="{{ portrait.path | relative_url }}" alt="Portrait of Pushkar Ghanekar" width="96" height="96" decoding="async">
+      {% endfor %}
     </div>
     <div>
       <h1>Pushkar Ghanekar</h1>

@@ -70,10 +70,15 @@ Open `http://localhost:4000`. Build the production site with `bundle exec jekyll
 - `_includes/` — shared navigation and social icons
 - `assets/css/main.css` — plain CSS, no preprocessing
 - `_includes/theme-init.html` — saved theme preference, inlined in the head to avoid a render-blocking request
+- `assets/js/portraits.js` — crossfades the landing-page portraits
 - `assets/js/search.js` — live post search, loaded only on the writing index
 - `assets/js/lightbox.js` — click-to-zoom for images in the writing, loaded only on post and about pages
+- `assets/img/portraits/` — images in the home-page rotation, discovered automatically
+- `bin/add-portrait.sh` — compress an image into the portrait rotation
 - `search.json` — generated index of posts used by the client-side search
 - `_plugins/fingerprint.rb` — adds a content hash to asset filenames so they can be cached forever
+
+Add a portrait with `bin/add-portrait.sh <image>` (it resizes to AVIF and drops it in `assets/img/portraits/`); the landing page picks up whatever is in that folder automatically.
 
 Social URLs live in `_config.yml`; page links live in `_includes/navigation.html`. Restart Jekyll after changing `_config.yml`.
 

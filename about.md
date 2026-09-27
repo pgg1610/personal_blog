@@ -12,7 +12,7 @@ zoom: true
   </header>
 
   <div class="page-content">
-    <img class="headshot" src="{{ '/assets/img/headshot_July2024.avif' | relative_url }}" alt="Portrait of Pushkar Ghanekar" width="720" height="856" decoding="async">
+    <img class="headshot" src="{{ '/assets/img/portraits/headshot_July2024.avif' | relative_url }}" alt="Portrait of Pushkar Ghanekar" width="720" height="856" decoding="async">
 
     <p>I use science, data, and AI to design better medicines at <a href="https://www.lilly.com/discovery/research-and-scientific-discovery">Eli Lilly</a>. I lead Frontier AI, a group I have been building since 2025 to help create AI platforms that accelerate molecule design.</p>
 
