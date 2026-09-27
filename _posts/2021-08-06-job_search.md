@@ -4,7 +4,7 @@ title: Navigating the job search
 date: 2021-08-06
 description: 
 featured: True
-tags: []
+tags: [phd]
 ---
 
 In this post I want to share my experience searching for a full-time industry job as a Chemical Engineering Ph.D. candidate. My job search coincided with the time when the world was still grappling with the uncertainty of the COVID-19 pandemic. In midst of all this uncertainty, I was fortunate to have full-time graduate assistant position and a supportive advisor who was willing to extend my graduation timeline if things did not work out as planned. That itself made a huge difference in my search.

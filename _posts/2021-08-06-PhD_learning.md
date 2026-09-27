@@ -4,7 +4,7 @@ title: Reflecting back on my Ph.D. journey
 date: 2021-08-06
 description: 
 featured: True
-tags: [life]
+tags: [life, phd]
 ---
 
 This essay is a reflection on my Ph.D. journey at Purdue University. In this essay, I list a few reasons that motivated me to pursue a Ph.D., learnings from the journey, and some tips that might help others who pursue it in the future.
