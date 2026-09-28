@@ -139,6 +139,19 @@ main { padding: 3.5rem 0 0; overflow-wrap: break-word; }
 .post-content code { font-size: 0.85em; }
 .post-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 0.9em; }
 .post-content th, .post-content td { padding: 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
+.post-content .caption { margin: -1.35rem 0 2.5rem; color: var(--muted); font-family: var(--sans); font-size: 0.85rem; line-height: 1.65; }
+
+/* The further-reading block at the end of a post: one entry per line, grouped by kind. */
+.post-content .references { margin: 3.25rem 0 0; padding-top: 2.25rem; border-top: 1px solid var(--line); }
+.post-content .references h2 { margin: 0 0 2rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+.post-content .references h3 { margin: 2.25rem 0 1rem; font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+.post-content .references h3:first-of-type { margin-top: 0; }
+.post-content .references ul { margin: 0; padding: 0; list-style: none; }
+.post-content .references li { margin: 0 0 1.35rem; font-family: var(--sans); font-size: 0.95rem; line-height: 1.55; }
+.post-content .references li:last-child { margin-bottom: 0; }
+.post-content .references li > a { color: var(--ink); font-family: var(--serif); font-size: 1.08rem; line-height: 1.4; }
+.post-content .references .ref-meta { color: var(--muted); font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.01em; }
+.post-content .references .ref-gloss { display: block; margin-top: 0.3rem; color: var(--muted); font-family: var(--sans); font-size: 0.88rem; line-height: 1.65; }
 .back-link { margin: 3rem 0 0; font-size: 0.9rem; }
 
 /* Click-to-zoom for images in the writing. */

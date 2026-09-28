@@ -58,6 +58,85 @@ It is fun to watch an old idea come back around, dressed in better engineering.
 Sebastian Raschka on Jev: easy to dismiss as "just a classifier," but its generalization is the breakthrough. Source: <a href="https://sebastianraschka.com/blog/2026/jev-classification-generalization.html">Sebastian Raschka, "Jev and Generalization" (Sep 20, 2026)</a>.
 </div>
 
----
+<div class="references">
 
-*Further watching and reading: [Sebastian Raschka on Jev and generalization](https://sebastianraschka.com/blog/2026/jev-classification-generalization.html), [Simon Willison on decision models](https://simonwillison.net/2026/Sep/21/jev/), [Jev-as-a-Judge on arXiv](https://arxiv.org/abs/2609.26550), [ThePrimeagen trying Jev](https://www.youtube.com/watch?v=FQNftquDDaI), [Caleb writes Codes explaining Jev in 7 minutes](https://www.youtube.com/watch?v=vj7hysh0mOI), [FireShip on the model that removed language](https://www.youtube.com/watch?v=TbkUKCm3CHQ). Sean Goedecke's series—[structured output is interesting again](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/), [two techniques for working with System One models](https://www.seangoedecke.com/two-techniques-for-working-with-system-one-models/), and [how System One models can train their own replacements](https://www.seangoedecke.com/system-one-models-can-train-their-own-replacements/)—shaped much of the middle section. Open-source cousins worth knowing: [Laya](https://github.com/NandhaKishorM/laya) (with [the story of building it](https://laya.convaiinnovations.com/)), [Contrastive Language Models](https://github.com/Contrastive-LM/CLM), and [GLiNER2.5-Decide](https://x.com/george_onx/status/2103189119891624205).*
+<h2>Further reading</h2>
+
+<h3>Writing</h3>
+
+<ul>
+<li>
+<a href="https://sebastianraschka.com/blog/2026/jev-classification-generalization.html">Jev and Generalization</a><span class="ref-meta"> &mdash; Sebastian Raschka, September 2026</span>
+<span class="ref-gloss">Easy to dismiss as "just a classifier." The generalization is the real breakthrough.</span>
+</li>
+<li>
+<a href="https://simonwillison.net/2026/Sep/21/jev/">Jev introduces a new shape of LLM &mdash; System One, aka Decision Models</a><span class="ref-meta"> &mdash; Simon Willison, September 2026</span>
+<span class="ref-gloss">The API, the pricing, and a search-reranking experiment.</span>
+</li>
+<li>
+<a href="https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/">Jev means structured output is interesting again</a><span class="ref-meta"> &mdash; Sean Goedecke, September 2026</span>
+<span class="ref-gloss">Fast typed decisions as a new computational primitive.</span>
+</li>
+<li>
+<a href="https://www.seangoedecke.com/two-techniques-for-working-with-system-one-models/">Two techniques for working with System One models</a><span class="ref-meta"> &mdash; Sean Goedecke, September 2026</span>
+<span class="ref-gloss">Tiered goals and tournament sampling &mdash; the source of the middle section above.</span>
+</li>
+<li>
+<a href="https://www.seangoedecke.com/system-one-models-can-train-their-own-replacements/">System One models can train their own replacements</a><span class="ref-meta"> &mdash; Sean Goedecke, September 2026</span>
+<span class="ref-gloss">Every deployment quietly collects the data for its cheaper successor.</span>
+</li>
+<li>
+<a href="https://laya.convaiinnovations.com/">Building a System 1 decision model before Jev</a><span class="ref-meta"> &mdash; Nandakishor Mukkunnoth, ConvAI Innovations</span>
+<span class="ref-gloss">A candid account of arriving at the idea early, and building it in the open.</span>
+</li>
+</ul>
+
+<h3>Research</h3>
+
+<ul>
+<li>
+<a href="https://arxiv.org/abs/2609.26550">Jev-as-a-Judge: Accept When Confident, Escalate When Unsure</a><span class="ref-meta"> &mdash; Li, Miao, Krishnan &amp; Padman, arXiv, September 2026</span>
+<span class="ref-gloss">A confidence-gated cascade keeps 99% of a strong judge's accuracy at a fraction of the fee.</span>
+</li>
+<li>
+<a href="https://arxiv.org/abs/2503.23303">SalesRLAgent: Real-Time Sales Conversion Prediction with Reinforcement Learning</a><span class="ref-meta"> &mdash; Nandakishor Mukkunnoth, arXiv, March 2025</span>
+<span class="ref-gloss">An early System 1 decision model.</span>
+</li>
+<li>
+<a href="https://arxiv.org/abs/2510.01237">Confidence-Aware Routing for Large Language Model Reliability Enhancement</a><span class="ref-meta"> &mdash; Nandakishor Mukkunnoth, arXiv, September 2025</span>
+<span class="ref-gloss">A formalization of schema-based decisions trained with reinforcement learning.</span>
+</li>
+</ul>
+
+<h3>Watching</h3>
+
+<ul>
+<li>
+<a href="https://www.youtube.com/watch?v=FQNftquDDaI">Trying Jev: the new style of AI</a><span class="ref-meta"> &mdash; ThePrimeagen</span>
+</li>
+<li>
+<a href="https://www.youtube.com/watch?v=vj7hysh0mOI">Jev explained in 7 minutes</a><span class="ref-meta"> &mdash; Caleb writes Codes</span>
+</li>
+<li>
+<a href="https://www.youtube.com/watch?v=TbkUKCm3CHQ">An ex-OpenAI researcher just deleted language from the LLM</a><span class="ref-meta"> &mdash; FireShip</span>
+</li>
+</ul>
+
+<h3>Open source</h3>
+
+<ul>
+<li>
+<a href="https://github.com/NandhaKishorM/laya">Laya</a><span class="ref-meta"> &mdash; ConvAI Innovations</span>
+<span class="ref-gloss">Open-weight decision models: three checkpoints, 100+ languages, 33 ms per pass, Apache 2.0.</span>
+</li>
+<li>
+<a href="https://github.com/Contrastive-LM/CLM">Contrastive Language Models</a><span class="ref-meta"> &mdash; CLM-8B</span>
+<span class="ref-gloss">Trained contrastively on states and actions; on par with Jev at up to 9&times; lower latency.</span>
+</li>
+<li>
+<a href="https://x.com/george_onx/status/2103189119891624205">GLiNER2.5-Decide</a><span class="ref-meta"> &mdash; George Maloney and collaborators</span>
+<span class="ref-gloss">Decisions that also extract evidence and structured records.</span>
+</li>
+</ul>
+
+</div>
