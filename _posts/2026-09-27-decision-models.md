@@ -38,6 +38,12 @@ If this holds, specialized typed models become a new kind of infrastructure: che
 
 It is fun to watch an old idea come back around, dressed in better engineering.
 
+<img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jev-raschka.png" width="1000" data-zoomable loading="lazy">
+
+<div class="caption">
+Sebastian Raschka on Jev: easy to dismiss as "just a classifier," but its generalization is the breakthrough. Source: <a href="https://sebastianraschka.com/blog/2026/jev-classification-generalization.html">Sebastian Raschka, "Jev and Generalization" (Sep 20, 2026)</a>.
+</div>
+
 ---
 
-*Further watching and reading: [ThePrimeagen trying Jev](https://www.youtube.com/watch?v=FQNftquDDaI), [Caleb writes Codes explaining Jev in 7 minutes](https://www.youtube.com/watch?v=vj7hysh0mOI), [FireShip on the model that removed language](https://www.youtube.com/watch?v=TbkUKCm3CHQ). Open-source cousins worth knowing: [Laya](https://github.com/NandhaKishorM/laya), [Contrastive Language Models](https://github.com/Contrastive-LM/CLM), and [GLiNER2.5-Decide](https://x.com/george_onx/status/2103189119891624205).*
+*Further watching and reading: [Sebastian Raschka on Jev and generalization](https://sebastianraschka.com/blog/2026/jev-classification-generalization.html), [ThePrimeagen trying Jev](https://www.youtube.com/watch?v=FQNftquDDaI), [Caleb writes Codes explaining Jev in 7 minutes](https://www.youtube.com/watch?v=vj7hysh0mOI), [FireShip on the model that removed language](https://www.youtube.com/watch?v=TbkUKCm3CHQ). Open-source cousins worth knowing: [Laya](https://github.com/NandhaKishorM/laya), [Contrastive Language Models](https://github.com/Contrastive-LM/CLM), and [GLiNER2.5-Decide](https://x.com/george_onx/status/2103189119891624205).*
