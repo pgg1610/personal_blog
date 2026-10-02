@@ -12,6 +12,8 @@ Think of it as the beginning of a class of specialized models that are type-cons
 
 That combination is what makes it exciting. From the infrastructure and excitement around autoregressive, general-purpose LLMs, we now have the engineering discipline and the interest to treat a typed, specialized model as a product: a service with an API, a price, and a reliability story.
 
+This is a living note on that shift. New developments get logged at the bottom as they land; the body above the updates stays as first written.
+
 ## How Jev works
 
 The basic shape is simple. You compose a "state"—a string, a list of strings, or a set of name-value pairs describing anything: an article, a customer record, an incident report. You attach one or more questions to that state and send it to the API. Three question types cover most decisions:
@@ -58,6 +60,12 @@ It is fun to watch an old idea come back around, dressed in better engineering.
 Sebastian Raschka on Jev: easy to dismiss as "just a classifier," but its generalization is the breakthrough. Source: <a href="https://sebastianraschka.com/blog/2026/jev-classification-generalization.html">Sebastian Raschka, "Jev and Generalization" (Sep 20, 2026)</a>.
 </div>
 
+## Updates
+
+**2026-09-30 — OpenAI previews the Decisions API.** A specialized GPT-6 Luna for fast, bounded decisions, announced at DevDay 2026. Context, a question, and a set of allowed answers go in; a typed choice comes out. Reported latency is about 150 ms, roughly ten times faster than the regular API. It is a limited preview, so the contract is still moving. The [practical guide](https://huggingface.co/blog/sora-2/what-is-openai-decisions-api-a-practical-guide) on the Hugging Face blog is the best walk-through: define the state, ask one bounded question, pick from the allowed answers, then check the result in code. The model recommends; policy decides. Confidence is a routing signal, not proof.
+
+**2026-09-30 — Cloudflare publishes Clef.** An open-weight (Apache 2.0) 27B decision model, post-trained from Qwen3.8-27B, with a smaller Clef-Flash variant. Same state-and-questions shape as Jev and the same three question types, but the state can carry images and video, and one forward pass returns a probability for every option of every question. The API is Jev/SystemOne-compatible, so existing clients can point at self-hosted weights. On the [Decision Index](https://clef-evals.workers-ai-mle.workers.dev) suite it leads Jev on most classification and tool-use benchmarks (BANKING77 94.2 vs 79.7 macro-F1) and trails on some reasoning ones (GPQA Diamond 48.0 vs 78.3). Across four end-to-end workflow evals the two sit within a few points. Median latency 209 ms, or 39 ms for Clef-Flash, against 524 ms for Jev. [Model card](https://huggingface.co/Cloudflare/clef).
+
 <div class="references">
 
 <h2>Further reading</h2>
@@ -88,6 +96,10 @@ Sebastian Raschka on Jev: easy to dismiss as "just a classifier," but its genera
 <li>
 <a href="https://laya.convaiinnovations.com/">Building a System 1 decision model before Jev</a><span class="ref-meta"> &mdash; Nandakishor Mukkunnoth, ConvAI Innovations</span>
 <span class="ref-gloss">A candid account of arriving at the idea early, and building it in the open.</span>
+</li>
+<li>
+<a href="https://huggingface.co/blog/sora-2/what-is-openai-decisions-api-a-practical-guide">What Is OpenAI Decisions API? A Practical Guide</a><span class="ref-meta"> &mdash; Hugging Face blog, September 2026</span>
+<span class="ref-gloss">The bounded-question pattern: state in, typed decision out, policy checks the result.</span>
 </li>
 </ul>
 
@@ -128,6 +140,10 @@ Sebastian Raschka on Jev: easy to dismiss as "just a classifier," but its genera
 <li>
 <a href="https://github.com/NandhaKishorM/laya">Laya</a><span class="ref-meta"> &mdash; ConvAI Innovations</span>
 <span class="ref-gloss">Open-weight decision models: three checkpoints, 100+ languages, 33 ms per pass, Apache 2.0.</span>
+</li>
+<li>
+<a href="https://huggingface.co/Cloudflare/clef">Clef</a><span class="ref-meta"> &mdash; Cloudflare, October 2026</span>
+<span class="ref-gloss">Open-weight 27B decision model with a faster Clef-Flash variant; multimodal state, Jev-compatible API, Apache 2.0.</span>
 </li>
 <li>
 <a href="https://github.com/Contrastive-LM/CLM">Contrastive Language Models</a><span class="ref-meta"> &mdash; CLM-8B</span>
