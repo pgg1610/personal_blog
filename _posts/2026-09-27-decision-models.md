@@ -36,6 +36,8 @@ The second is **tournament sampling**. When the number of options is large—his
 
 There is a deeper observation in another of his posts: a well-prompted System One model can **distill itself into a cheaper replacement**. Because the model must be prompted for a specific task, every successful deployment quietly assembles a labeled dataset—inputs in, decisions out. Once the prompt is stable and the logs are collected, a small dedicated classifier can be trained on exactly that data, at lower cost and latency. It is a refreshingly practical view of generalization: the general model earns its place by making the first version cheap, and gracefully works itself out of a job if the task proves permanent.
 
+Datavorous provides a wonderfully specific proof of concept with [Ohev](https://datavorous.github.io/blog/ohev.html), a model for judging whether conversations are romantic, platonic, or ambiguous. They attached a ternary decision head to Qwen3.5 0.8B, trained it on 200 curated conversations, and used the consensus of five independently trained models as the final answer.
+
 ## Why this matters for agents and laboratories
 
 For agentic systems, this is a natural fit. Most of the steps in an agent workflow are not open-ended generation; they are routing and triage. Which tool should handle this? Is this result good enough to accept? Should this failure be retried or escalated? Those are classification questions, and a fast, cheap, calibrated model is a better tool for them than a large generative one. It would work well as a model router or an agent router, deciding which specialist to call before spending tokens on the expensive one.
